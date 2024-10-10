@@ -12,3 +12,5 @@ function ProductList({ products }) {
 }
 
 export default ProductList;
+
+//Este componente muestra una lista de productos obtenidos desde la API de Mercado Libre.
