@@ -1,46 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductAttributes from '../Components/ProductAttributes';
 import { useCart } from '../Components/CartContext';
+import ProductAttributes from '../Components/ProductAttributes';
+import { useParams } from 'react-router-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Estilos para el carrusel
+import { Carousel } from 'react-responsive-carousel';
+import '../Styles/ProductPage.css';
 
-function ProductPage() {
-  const { id } = useParams();
+function ProductDetailPage() {
+  const { id } = useParams(); // Obtener el id del producto desde la URL
   const [product, setProduct] = useState(null);
-  const { dispatch } = useCart();  // Para agregar productos al carrito
+  const { dispatch } = useCart();
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      const response = await axios.get(`https://api.mercadolibre.com/items/${id}`);
-      setProduct(response.data);
+    const fetchProductDetails = async () => {
+      try {
+        const response = await axios.get(`https://api.mercadolibre.com/items/${id}`);
+        setProduct(response.data);
+      } catch (error) {
+        console.error('Error fetching product details', error);
+      }
     };
-    fetchProduct();
+    fetchProductDetails();
   }, [id]);
+
+  const handleAddToCart = () => {
+    dispatch({ type: 'ADD_TO_CART', product });
+  };
 
   if (!product) {
     return <div>Cargando...</div>;
   }
 
-  const handleAddToCart = () => {
-    dispatch({ type: 'ADD_TO_CART', product });  // Añadir el producto al carrito
-  };
-
   return (
     <div>
       <h1>{product.title}</h1>
-      <img src={product.pictures[0].url} alt={product.title} />
+      {/* Carrusel de imágenes */}
+      {product.pictures && product.pictures.length > 1 ? (
+        <Carousel showArrows={true} autoPlay={false} infiniteLoop={true} className='carousel'>
+          {product.pictures.map((picture, index) => (
+            <div key={index}>
+              <img src={picture.url} alt={`Imagen ${index + 1} de ${product.title}`} className='carouselImage' />
+            </div>
+          ))}
+        </Carousel>
+      ) : (
+        <img src={product.thumbnail} alt={product.title} />
+      )}
+      
       <p>Precio: ${product.price}</p>
-      <p>{product.description}</p>
-
       <ProductAttributes attributes={product.attributes} />
-
-      <button onClick={handleAddToCart}>Comprar</button>
-
-      <Link to="/">Volver al inicio</Link>
+      <button onClick={handleAddToCart}>Añadir al carrito</button>
+      <button onClick={() => window.history.back()}>Volver</button>
     </div>
   );
 }
 
-export default ProductPage;
+export default ProductDetailPage;
 
 //Aquí se obtiene el detalle de un producto utilizando su id y se muestran sus detalles.
