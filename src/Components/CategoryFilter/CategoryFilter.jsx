@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../Styles/CategoryFilter.css';
+import './CategoryFilter.css';
 
 function CategoryFilter({ onCategorySelect }) {
   const [categories, setCategories] = useState([]);

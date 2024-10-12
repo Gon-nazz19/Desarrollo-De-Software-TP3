@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useCart } from '../Components/CartContext';
-import ProductAttributes from '../Components/ProductAttributes';
+import { useCart } from '../../Components/CartContext/CartContext';
+import ProductAttributes from '../../Components/ProductAttributes/ProductAttributes';
 import { useParams } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Estilos para el carrusel
 import { Carousel } from 'react-responsive-carousel';
-import '../Styles/ProductPage.css';
+import './ProductPage.css';
 
 function ProductDetailPage() {
   const { id } = useParams(); // Obtener el id del producto desde la URL

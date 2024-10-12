@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import SearchBar from '../Components/SearchBar';
-import ProductList from '../Components/ProductList';
-import CategoryFilter from '../Components/CategoryFilter';
-import '../Styles/HomePage.css'; // Importar estilos generales
+import SearchBar from '../../Components/SearchBar/SearchBar';
+import ProductList from '../../Components/ProductList/ProductList';
+import CategoryFilter from '../../Components/CategoryFilter/CategoryFilter';
+import './HomePage.css'; 
 
 function HomePage() {
   const [products, setProducts] = useState([]);
