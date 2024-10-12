@@ -1,35 +1,49 @@
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  min-height: 350px; /* Aumenta la altura mínima si es necesario */
+}
+
 .product-item img {
-    display: block;
-    margin: 0 auto 10px;
-    max-width: 100%;
-    height: auto; 
-    border-radius: 8px;
-  }
+  display: block;
+  margin: 0 auto 10px;
+  max-width: 100%;
+  height: auto; 
+  border-radius: 8px;
+}
+
+.product-item h2 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em; 
+  height: 100px; /* Ajusta la altura mínima para que todos los títulos ocupen el mismo espacio */
   
-  .product-item h2 {
-    font-size: 1.2em;
-    margin-bottom: 0.5em; 
-    
-  }
-  
-  .product-item p {
-    font-size: 0,5em;
-  }
-  
-  .product-item a { /* Estilo para "Ver detalles" */
-    display: inline-block;
-    padding: 8px 16px;
-    margin-top: 10px; 
-    background-color: #DDA0DD;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .product-item a:hover {
-    background-color: #9635db;
-    text-decoration: none; 
-  }
-  
+}
+
+.product-item p {
+  font-size: 1em;
+  margin-bottom: 1em; /* Agrega un margen inferior para separar del botón */
+  margin-top: 1em;
+}
+
+.product-item a {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: auto; /* Empuja el botón hacia el final del contenedor */
+  background-color: #DDA0DD;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-item a:hover {
+  background-color: #9635db;
+  text-decoration: none; 
+}

@@ -35,27 +35,41 @@ function ProductDetailPage() {
   return (
     <div>
       <h1>{product.title}</h1>
-      {/* Carrusel de imágenes */}
-      {product.pictures && product.pictures.length > 1 ? (
-        <Carousel showArrows={true} autoPlay={false} infiniteLoop={true} className='carousel'>
-          {product.pictures.map((picture, index) => (
-            <div key={index}>
-              <img src={picture.url} alt={`Imagen ${index + 1} de ${product.title}`} className='carouselImage' />
+      <div className="product-detail-container">
+        {/* Carrusel de imágenes */}
+        {product.pictures && product.pictures.length > 1 ? (
+          <Carousel showArrows={true} autoPlay={false} infiniteLoop={true} className='carousel'>
+            {product.pictures.map((picture, index) => (
+              <div key={index}>
+                <img src={picture.url} alt={`Imagen ${index + 1} de ${product.title}`} className='carouselImage' />
+              </div>
+            ))}
+          </Carousel>
+        ) : (
+          <img src={product.thumbnail} alt={product.title}/>
+        )}
+        
+        <ProductAttributes attributes={product.attributes} />
+        <div className="price-buttons-container">
+            <div className="align-items">
+              <p>Precio: ${product.price}</p>
+              <button onClick={handleAddToCart}>Añadir al carrito</button>
+              <button onClick={() => window.history.back()}>Volver</button>
             </div>
-          ))}
-        </Carousel>
-      ) : (
-        <img src={product.thumbnail} alt={product.title} />
-      )}
-      
-      <p>Precio: ${product.price}</p>
-      <ProductAttributes attributes={product.attributes} />
-      <button onClick={handleAddToCart}>Añadir al carrito</button>
-      <button onClick={() => window.history.back()}>Volver</button>
+        </div>
+      </div>
+
+      <div className="si">
+            <div className="siosi">
+              <p>Precio: ${product.price}</p>
+              <button onClick={handleAddToCart}>Añadir al carrito</button>
+              <button onClick={() => window.history.back()}>Volver</button>
+            </div>
+        </div>
     </div>
   );
 }
 
 export default ProductDetailPage;
 
-//Aquí se obtiene el detalle de un producto utilizando su id y se muestran sus detalles.
+//Aquí se obtiene el detalle de un producto utilizando su id y se muestran sus detalles. 
