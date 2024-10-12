@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Styles/SearchBar.css'
 
 function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -9,7 +10,7 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="search-bar">
       <input
         type="text"
         placeholder="Search for products"
@@ -20,7 +21,4 @@ function SearchBar({ onSearch }) {
     </form>
   );
 }
-
 export default SearchBar;
-
-//Este componente tiene un input para que el usuario pueda buscar productos.

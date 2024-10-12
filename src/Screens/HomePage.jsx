@@ -3,6 +3,7 @@ import axios from 'axios';
 import SearchBar from '../Components/SearchBar';
 import ProductList from '../Components/ProductList';
 import CategoryFilter from '../Components/CategoryFilter';
+import '../Styles/HomePage.css'; // Importar estilos generales
 
 function HomePage() {
   const [products, setProducts] = useState([]);
@@ -23,16 +24,15 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <div className="homepage-container">
       <h1>Buscar productos</h1>
-      <CategoryFilter onCategorySelect={setSelectedCategory} />
-      <SearchBar onSearch={searchProducts} />
+      <div className="filter-search-container"> 
+        <CategoryFilter onCategorySelect={setSelectedCategory} />
+        <SearchBar onSearch={searchProducts} />
+      </div>
       <ProductList products={products} />
     </div>
   );
 }
 
 export default HomePage;
-
-
-//Aquí se muestran la barra de búsqueda y los resultados de productos obtenidos desde la API.

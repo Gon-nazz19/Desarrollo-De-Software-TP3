@@ -23,3 +23,5 @@ function ProductAttributes({ attributes }) {
 
 export default ProductAttributes;
 
+//Atributos del producto seleccionado
+

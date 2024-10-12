@@ -1,0 +1,32 @@
+/* Estilo del filtro de categorías */
+
+
+/* Estilo general para el contenedor del filtro de categorías */
+.category-filter {
+  display: flex; /* Usar flexbox para alinear elementos */
+  flex-direction: column; /* Colocar los elementos en columna */
+  align-items:start; /* Centrar los elementos horizontalmente */
+  margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilo para la etiqueta */
+.category-label {
+  font-size: 18px; /* Tamaño de la fuente */
+  color: #333; /* Color del texto */
+  margin-bottom: 10px; /* Espacio inferior */
+}
+
+/* Estilo para el select */
+.category-select {
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  border: 2px solid #d341d8; /* Color del borde */
+  border-radius: 5px; /* Bordes redondeados */
+  outline: none; /* Eliminar el contorno por defecto */
+  transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+/* Estilo del select cuando está enfocado */
+.category-select:focus {
+  border-color: #9635db; /* Cambiar color de borde al enfocar */
+}

@@ -1,0 +1,26 @@
+/* Estilos generales de la página */
+.homepage-container {
+  max-width: 100%;
+  margin: 0 auto; /* Centrar la página */
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+/* Estilo para el título */
+.homepage-container h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Estilo para el contenedor de filtro y búsqueda */
+.filter-search-container {
+  display: flex; /* Usar flexbox para alinear horizontalmente */
+  justify-content: center; /* Centrar el contenido */
+  gap: 20px; /* Espacio entre el filtro y la barra de búsqueda */
+  margin-bottom: 20px; /* Espacio inferior */
+
+}
+

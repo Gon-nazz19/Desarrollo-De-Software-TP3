@@ -1,0 +1,45 @@
+/* SearchBar.css */
+
+/* Estilo general de la barra de búsqueda */
+.search-bar {
+  display: flex; /* Usar flexbox para alinear el input y el botón */
+  justify-content: center; /* Centrar los elementos horizontalmente */
+  margin-bottom: 20px; /* Espacio inferior */
+  height: 44px;
+  margin-top: 34px;
+}
+
+/* Estilo para el input de búsqueda */
+.search-bar input[type="text"] {
+  width: 300px; /* Ancho fijo para el campo de búsqueda */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  border: 2px solid #d341d8 ; /* Color del borde */
+  border-radius: 5px 0 0 5px; /* Bordes redondeados (izquierda) */
+  outline: none; /* Eliminar el contorno por defecto */
+  transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+/* Estilo del input cuando está enfocado */
+.search-bar input[type="text"]:focus {
+  border-color: #9635db ; /* Cambiar color de borde al enfocar */
+}
+
+/* Estilo para el botón de búsqueda */
+.search-bar button {
+  padding: 10px 20px; /* Espaciado interno */
+  background-color: #DDA0DD;; /* Color de fondo */
+  border: none; /* Sin borde */
+  border-radius: 0 5px 5px 0; /* Bordes redondeados (derecha) */
+  color: white; /* Color del texto */
+  font-size: 16px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+/* Estilo para el botón cuando se pasa el ratón */
+.search-bar button:hover {
+  background-color: #9635db /* Cambiar color de fondo al pasar el ratón */
+}
+
+

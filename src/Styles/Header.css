@@ -1,0 +1,44 @@
+ /*Estilos para el encabezado*/
+ header {
+    display: flex;
+    justify-content: space-between; /* Para alinear el carrito y el título en extremos opuestos */
+    align-items: center; /* Alinear verticalmente al centro */
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añade un pequeño sombreado */
+  }
+  
+  header h1 {
+    flex: 1; /* Permitir que el h1 ocupe el espacio restante */
+    text-align: center; /* Centrar el texto en el h1 */
+    font-size: 24px;
+    color: #333;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    position: relative;
+  }
+  
+  header a:hover {
+    color: #007bff; /* Cambiar color al hacer hover */
+  }
+  
+  header a::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+  }
+  

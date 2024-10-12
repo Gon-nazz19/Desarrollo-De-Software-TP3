@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../Styles/CategoryFilter.css';
 
 function CategoryFilter({ onCategorySelect }) {
   const [categories, setCategories] = useState([]);
@@ -17,10 +18,10 @@ function CategoryFilter({ onCategorySelect }) {
   }, []);
 
   return (
-    <div>
-      <label htmlFor="category">Filtrar por categorias:</label>
-      <select id="category" onChange={(e) => onCategorySelect(e.target.value)}>
-        <option value="">Categorias</option>
+    <div className="category-filter"> {/* Clase para el contenedor */}
+      <label htmlFor="category" className="category-label">Filtrar por categorías:</label> {/* Clase para la etiqueta */}
+      <select id="category" className="category-select" onChange={(e) => onCategorySelect(e.target.value)}>
+        <option value="">Categorías</option>
         {categories.map((category) => (
           <option key={category.id} value={category.id}>
             {category.name}
