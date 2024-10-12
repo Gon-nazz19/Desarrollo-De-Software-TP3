@@ -8,8 +8,9 @@ function Header() {
 
   return (
     <header>
-        <img id='logo de la empresa' src={logo} alt="Logo de la empresa"></img>
-      <h1>Mi Tienda</h1>
+        <div className="logo-container">
+          <img id='logo de la empresa' src={logo} alt="Logo de la empresa"></img>
+        </div>
       <nav>
         {/* Ícono de una casita que redirige al catálogo */}
         <Link to="/">

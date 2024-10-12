@@ -1,59 +1,77 @@
-/* Estilos para el encabezado */
+/* Estilos generales para el encabezado */
 header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background-color: var(--violet-dark);
-  color: var(--white);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: sticky;
+  justify-content: space-between; /* Distribuye el espacio entre logo y navegación */
+  align-items: center; /* Alinear verticalmente el contenido */
+  padding: 10px 15px;
+  background-color:#F5F5F5; /* Violeta oscuro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  position: sticky; /* Mantener fijo al hacer scroll */
   top: 0;
   z-index: 1000;
 }
 
+/* Contenedor del logo */
+.logo-container {
+  margin-left: 865px;
+}
+
+/* Logo */
 header img {
-  width: auto;
-  height: 180px;
-  margin-bottom: 10px;
-  align-self: flex-start;
+  height: 80px; /* Tamaño del logo */
+  width: auto; /* Mantener proporción del logo */
 }
 
-header h1 {
-  color: var(--white);
-  font-size: 28px;
-  text-align: center;
-  margin: 0;
-  margin-bottom: 15px;
-}
-
+/* Barra de navegación a la derecha */
 header nav {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 400px;
+  align-items: center;
+  gap: 15px; /* Espacio entre los elementos de navegación */
 }
 
+/* Enlaces de navegación */
 header nav a {
-  text-decoration: none;
-  color: var(--white);
-  font-size: 20px;
-  margin: 0 10px;
+  text-decoration: none; /* Sin subrayado */
+  color: #DDA0DD;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
+/* Efecto hover en los enlaces */
 header nav a:hover {
-  color: var(--violet-light);
+  color: #DDA0DD; /* Violeta claro */
 }
 
+/* Botón de la casita */
 header nav a button {
   background: none;
   border: none;
-  font-size: 28px;
-  color: var(--white);
+  font-size: 24px; /* Tamaño del ícono */
+  color: #FFFFFF;
   cursor: pointer;
 }
 
+/* Hover en el botón de la casita */
 header nav a button:hover {
-  color: var(--violet-light);
+  color: #DDA0DD; /* Violeta claro */
 }
 
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  header {
+    padding: 8px 10px;
+  }
+
+  header img {
+    height: 60px; /* Reducir tamaño del logo en móviles */
+  }
+
+  header nav a {
+    font-size: 16px; /* Ajustar tamaño de fuente */
+  }
+
+  header nav a button {
+    font-size: 22px; /* Reducir tamaño del ícono */
+  }
+}
