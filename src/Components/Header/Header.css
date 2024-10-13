@@ -1,77 +1,57 @@
-/* Estilos generales para el encabezado */
+/* Estilos para el encabezado */
 header {
   display: flex;
-  justify-content: space-between; /* Distribuye el espacio entre logo y navegación */
-  align-items: center; /* Alinear verticalmente el contenido */
-  padding: 10px 15px;
-  background-color:#F5F5F5; /* Violeta oscuro */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-  position: sticky; /* Mantener fijo al hacer scroll */
+  justify-content: space-between; /* Asegura que los elementos se separen según el espacio disponible */
+  align-items: center; /* Alinea los elementos en el centro verticalmente */
+  padding: 20px;
+  background-color: #9400d3;
+  color: var(--white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-/* Contenedor del logo */
 .logo-container {
-  margin-left: 865px;
+  flex: 1;
 }
 
-/* Logo */
-header img {
-  height: 80px; /* Tamaño del logo */
-  width: auto; /* Mantener proporción del logo */
+header h1 {
+  flex: 1;
+  text-align: center; 
+  color: white;
+  font-size: 28px;
+  margin: 0;
 }
 
-/* Barra de navegación a la derecha */
 header nav {
+  flex: 1;
   display: flex;
-  align-items: center;
-  gap: 15px; /* Espacio entre los elementos de navegación */
+  justify-content: flex-end; 
 }
 
-/* Enlaces de navegación */
 header nav a {
-  text-decoration: none; /* Sin subrayado */
-  color: #DDA0DD;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 20px;
 }
 
-/* Efecto hover en los enlaces */
-header nav a:hover {
-  color: #DDA0DD; /* Violeta claro */
-}
-
-/* Botón de la casita */
 header nav a button {
   background: none;
   border: none;
-  font-size: 24px; /* Tamaño del ícono */
-  color: #FFFFFF;
+  font-size: 28px;
+  color: white;
   cursor: pointer;
 }
 
-/* Hover en el botón de la casita */
 header nav a button:hover {
-  color: #DDA0DD; /* Violeta claro */
+  color: #7F00FF;
 }
 
-/* Estilos para pantallas pequeñas (móviles) */
-@media (max-width: 600px) {
-  header {
-    padding: 8px 10px;
-  }
-
-  header img {
-    height: 60px; /* Reducir tamaño del logo en móviles */
-  }
-
-  header nav a {
-    font-size: 16px; /* Ajustar tamaño de fuente */
-  }
-
-  header nav a button {
-    font-size: 22px; /* Reducir tamaño del ícono */
-  }
+header img {
+  height: auto;
+  width: 180px;
 }
+
+

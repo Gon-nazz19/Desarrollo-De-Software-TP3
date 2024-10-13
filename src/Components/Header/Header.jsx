@@ -8,9 +8,10 @@ function Header() {
 
   return (
     <header>
-        <div className="logo-container">
-          <img id='logo de la empresa' src={logo} alt="Logo de la empresa"></img>
-        </div>
+      <div className="logo-container">
+        <img id='logo de la empresa' src={logo} alt="Logo de la empresa"></img>
+      </div>
+      <h1 id='Nombre-del-negocio'>WooCommerce</h1>
       <nav>
         {/* Ícono de una casita que redirige al catálogo */}
         <Link to="/">

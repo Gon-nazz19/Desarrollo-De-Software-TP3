@@ -8,6 +8,15 @@
   padding: 16px;
   text-align: center;
   min-height: 350px; /* Aumenta la altura mínima si es necesario */
+  overflow: hidden;
+}
+
+.product-item h2 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  height: 100px;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .product-item img {

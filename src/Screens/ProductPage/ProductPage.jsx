@@ -58,14 +58,6 @@ function ProductDetailPage() {
             </div>
         </div>
       </div>
-
-      <div className="si">
-            <div className="siosi">
-              <p>Precio: ${product.price}</p>
-              <button onClick={handleAddToCart}>Añadir al carrito</button>
-              <button onClick={() => window.history.back()}>Volver</button>
-            </div>
-        </div>
     </div>
   );
 }

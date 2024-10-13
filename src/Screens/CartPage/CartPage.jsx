@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from '../../Components/CartContext/CartContext';
+import './CartPage.css'; 
 
 function CartPage() {
   const { cart, dispatch } = useCart();
@@ -12,23 +13,31 @@ function CartPage() {
   };
 
   return (
-    <div>
+    <div className="cart-page">
       <h1>Tu Carrito</h1>
       {cart.length === 0 ? (
         <p>El carrito está vacío</p>
       ) : (
-        <div>
-          <ul>
+        <div className="cart-container">
+          <div className="cart-items">
             {cart.map((product) => (
-              <li key={product.id}>
-                <img src={product.thumbnail} alt={product.title} />
-                <h2>{product.title}</h2>
-                <p>Precio: ${product.price}</p>
-                <button onClick={() => handleRemove(product.id)}>Eliminar</button>
-              </li>
+              <div className="cart-item" key={product.id}>
+                <img src={product.thumbnail} alt={product.title} className="product-image" />
+                <div className="product-details">
+                  <h2>{product.title}</h2>
+                  <p>Precio: ${product.price}</p>
+                </div>
+                <button className="remove-button" onClick={() => handleRemove(product.id)}>
+                  Eliminar
+                </button>
+              </div>
             ))}
-          </ul>
-          <h3>Precio Total: ${totalPrice}</h3>
+          </div>
+          <div className="cart-summary">
+            <h2>Resumen de compra</h2>
+            <p>Productos: {cart.length}</p>
+            <h3>Total: ${totalPrice}</h3>
+          </div>
         </div>
       )}
     </div>
